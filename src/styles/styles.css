@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.3s ease;
+}
+
+body {
+  font-family: "Montserrat";
+  background: #FDF8E1;
+}
+
+header {
+  background: transparent;
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: none;
+  color: #202020;
+}
+header button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #5e5b52;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .homepage-image {
+  margin: 1rem 1rem 0.5rem;
+  position: relative;
+}
+main .homepage-image img {
+  width: 100%;
+}
+main .homepage-image .art-info {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 50%;
+  padding: 1rem 2rem;
+  bottom: 0.8rem;
+  text-align: left;
+  color: #FDF8E1;
+}
+main .homepage-image .art-info h4 {
+  font-size: 1.5em;
+}
+main .image-content {
+  margin: 1rem 1rem 0.5rem;
+  position: relative;
+}
+main .image-content img {
+  width: 100%;
+}
+main .image-content .art-info {
+  position: absolute;
+  padding: 1rem 2rem;
+  background: #FDF8E1;
+  width: 50%;
+  bottom: -2rem;
+}
+main article {
+  margin: 4rem 1rem;
+  color: #333533;
+}
+main article p {
+  line-height: 1.5rem;
+}/*# sourceMappingURL=styles.css.map */
