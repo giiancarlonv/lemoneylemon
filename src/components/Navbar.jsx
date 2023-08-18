@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <Link to='/'>lemoney</Link>
+        <Link to='/lemoneylemon'>lemoney</Link>
         <button>start slideshow</button>
       </header>
       <Outlet />

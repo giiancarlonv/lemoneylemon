@@ -14,6 +14,12 @@ import image13 from '../assets/art/Illustration20.webp';
 import image14 from '../assets/art/Illustration23.webp';
 import image15 from '../assets/art/Illustration25.webp';
 import image16 from '../assets/art/Illustration26.webp';
+import image17 from '../assets/art/deity.webp';
+import image18 from '../assets/art/hollowknight_1.webp';
+import image19 from '../assets/art/hollowknight_2.webp';
+import image20 from '../assets/art/Illustration24.webp';
+import image21 from '../assets/art/Illustration27.webp';
+import image22 from '../assets/art/samurai.webp';
 
 export const DATA = [
   {
@@ -99,6 +105,36 @@ export const DATA = [
     title: 'illus2',
     date: 'date',
     image: image16,
+  },{
+    id: 'a7a79136-3d66-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image17,
+  },{
+    id: 'a7a793c0-3d66-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image18,
+  },{
+    id: 'a7a795fa-3d66-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image19,
+  },{
+    id: 'a7a79898-3d66-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image20,
+  },{
+    id: '549ad704-3d67-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image21,
+  },{
+    id: '549ad95c-3d67-11ee-be56-0242ac120002',
+    title: 'illus2',
+    date: 'date',
+    image: image22,
   },
 ]
 export default DATA;
