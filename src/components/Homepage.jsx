@@ -8,11 +8,11 @@ export const Homepage = () => {
   return (
   <>
     <Outlet />
-    <main>
+    <div className='main'>
       {DATA.map((item, index) => (
         <Thumbnail data={item} key={index}/>  
       ))}
-    </main>
+    </div>
   </>
   )
 }
