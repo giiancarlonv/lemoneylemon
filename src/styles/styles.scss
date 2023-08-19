@@ -17,6 +17,9 @@ body{
   font-family: 'Montserrat';
   background: $off-white;
 }
+body.darkmode{
+  background: $font-dark;
+}
 header{
   background: transparent;
   padding: 2rem 1rem 2rem;
@@ -30,6 +33,9 @@ header{
     text-decoration: none;
     color: $font-dark;
   }
+  a.dark{
+    color: $primary;
+  }
   button{
     background: none;
     border: none;
@@ -37,6 +43,28 @@ header{
     font-size: .7em;
     font-weight: 700;
     color: $font-light-gray
+  }
+  @keyframes sunset {
+    from{
+      opacity: 0;
+    }
+  }
+  @keyframes sunrise {
+    from{
+      opacity: 0;
+    }
+  }
+  .lightmode{
+    animation: sunrise .4s ease-in;
+    img{
+      filter: brightness(15%);
+    }
+  }
+  .darkmode{
+    animation: sunset .4s ease-in-out;
+    img{
+      filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(4475%) hue-rotate(316deg) brightness(113%) contrast(95%);
+    }
   }
 }
 .main{
@@ -67,28 +95,27 @@ header{
       }
     }
   }
-  .image-content-wrapper{
-    display: flex;
-    flex-flow: column wrap;
-    width: 100%;
-    .image-content{
-      margin: 1rem 1rem .5rem;
-      position: relative;
-      img{
-        width: 100%
-      }
-      .art-info{
-        position: absolute;
-        padding: 1rem 2rem;
-        background: $off-white;
-        width: 50%;
-        bottom: -2rem;
-      }
+}
+.image-content-wrapper{
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  .image-content{
+    margin: 1rem 1rem .5rem;
+    position: relative;
+    img{
+      width: 100%
+    }
+    .art-info{
+      position: absolute;
+      padding: 1rem 2rem;
+      background: $off-white;
+      width: 50%;
+      bottom: -2rem;
     }
   }
- 
   article{
-    margin: 4rem 1rem;
+    padding: 4rem 1rem;
     color: $font-gray;
     p{
       line-height: 1.5rem;
@@ -107,6 +134,9 @@ footer{
   span{
     font-weight: 700;
     margin: 1rem 0;
+  }
+  span.dark{
+    color: $primary;
   }
   .socials{
     display: flex;
@@ -127,39 +157,93 @@ footer{
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     padding: 0 1rem;
-    .image-content-wrapper{
-      .image-content{
-        width: 150%;
-        .art-info{
-          bottom: 80%;
-          right: -5rem;
-          padding: 2.5rem 4rem;
-          h4{
-            font-size: 3em;
-            margin: .5rem 0;
-          }
-          span{
-            color: $font-light-gray;
-          }
+  }
+  .image-content-wrapper{
+    .image-content{
+      padding: 0 1rem;
+      img{
+        width: 80% !important;
+      }
+      .art-info{
+        bottom: 81%;
+        right: .1rem;
+        padding: 2.5rem 4rem;
+        h4{
+          font-size: 2em;
+          margin: .5rem 0;
         }
-        img{
-          width: 100%;
+        span{
+          color: $font-light-gray;
         }
+      }
+      img{
+        width: 100%;
       }
     }
     article{
-      margin: 1rem;
+      margin: 2rem 5rem;
       color: $font-light-gray;
+    }
+  }
+  footer{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    span.dark{
+      color: $primary;
+    }
+    .socials{
+      padding: 0;
+      a{
+        padding-left: 1rem;
+      }
     }
   }
 }
 @media (min-width: 1280px) {
+  header{
+    padding: 2rem 4rem;
+  }
   .main{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     column-gap: 15px;
     row-gap: 10px;
     .homepage-image{
       margin: 0;
+    }
+  }
+  .image-content-wrapper{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 0 2rem;
+    .image-content{
+      padding: 1rem 1rem;
+      img{
+        width: 80% !important;
+      }
+      .art-info{
+        bottom: 74.5%;
+        right: .1rem;
+        padding: 2.5rem 4rem;
+        h4{
+          font-size: 2.5em;
+        }
+      }
+    }
+    article{
+      margin: 2rem 5rem;
+      color: $font-light-gray;
+    }
+  }
+  footer{
+    margin: 0;
+    padding: 1rem 10rem;
+    .socials{
+      a{
+        padding-left: 2.5rem;
+      }
     }
   }
 }

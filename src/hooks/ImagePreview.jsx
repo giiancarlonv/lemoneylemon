@@ -8,7 +8,6 @@ export const ImagePreview = () => {
   console.log(image)
   return(
     <>
-    <div className='main'>
       <div className='image-content-wrapper'>
         <section className='image-content'>
           <img src={image} alt="sample image" />
@@ -22,8 +21,6 @@ export const ImagePreview = () => {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos velit voluptatum ex laboriosam obcaecati a provident atque. Numquam, incidunt aliquid? Consequatur nulla rem fugiat quaerat commodi, perspiciatis ratione voluptas voluptatum.</p>
         </article>
       </div>
-        
-    </div>
     </>
   )
 }

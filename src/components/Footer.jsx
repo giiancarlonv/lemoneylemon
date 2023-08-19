@@ -1,10 +1,17 @@
-import React from 'react'
+import {React, useState} from 'react'
 import github from '../assets/icons/github.svg'
 import linkedin from '../assets/icons/linkedin.svg'
+
 const Footer = () => {
+  const body = document.body;
+  const isDarkMode = body.classList.contains('darkmode');
+  const test = () =>{
+    isDarkMode ? console.log('tite'): console.log('no tite');
+  }
+  
   return (
     <footer>
-      <span>
+      <span className={test ? 'dark' : ''}>
         lemoneylemon
       </span>
       <div className='socials'>
