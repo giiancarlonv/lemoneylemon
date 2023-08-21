@@ -168,8 +168,8 @@ header.darkmode .lightmode img {
   z-index: 1;
   position: fixed;
   background: transparent;
-  bottom: 15px;
-  right: 10px;
+  bottom: 20px;
+  left: 10px;
 }
 .arrow-up button {
   padding: 0.7rem 1rem;
@@ -206,7 +206,7 @@ header.darkmode .lightmode img {
   filter: invert(100%) sepia(46%) saturate(1781%) hue-rotate(328deg) brightness(99%) contrast(97%);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   header {
     padding: 2rem;
   }
@@ -260,6 +260,9 @@ header.darkmode .lightmode img {
   .test.clicked img {
     width: 85%;
   }
+  .arrow-up {
+    right: 40px;
+  }
 }
 @media (min-width: 1280px) {
   header {
@@ -307,5 +310,8 @@ header.darkmode .lightmode img {
   }
   footer .socials a {
     padding-left: 2.5rem;
+  }
+  .arrow-up {
+    right: 40px;
   }
 }/*# sourceMappingURL=styles.css.map */

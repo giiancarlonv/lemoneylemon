@@ -11,8 +11,8 @@ const Footer = (props) => {
           lemoneylemon
         </span>
         <div className='socials'>
-          <a href=""><img src={github} alt="github" /></a>
-          <a href=""><img src={linkedin} alt="linkedin" /></a>
+          <a href="https://github.com/giiancarlonv"><img src={github} alt="github" /></a>
+          <a href="https://www.linkedin.com/in/giancarlo-nava-41314a193/"><img src={linkedin} alt="linkedin" /></a>
         </div>
     </footer>
     </>

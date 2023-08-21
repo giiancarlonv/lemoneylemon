@@ -7,7 +7,7 @@ import moonIcon from './assets/icons/icon-moon.svg';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ImagePreview } from './hooks/ImagePreview'
-import { TopButton } from './components/TopButton';
+import { LandingPage } from './components/LandingPage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
