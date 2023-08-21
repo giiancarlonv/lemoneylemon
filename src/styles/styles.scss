@@ -20,9 +20,12 @@ body{
 body.darkmode{
   background: $font-dark;
 }
+body.imageClicked{
+  overflow-y: hidden;
+}
 header{
   background: transparent;
-  padding: 2rem 1rem 2rem;
+  padding: 1.5rem 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,9 +36,7 @@ header{
     text-decoration: none;
     color: $font-dark;
   }
-  a.dark{
-    color: $primary;
-  }
+  
   button{
     background: none;
     border: none;
@@ -47,6 +48,7 @@ header{
   @keyframes sunset {
     from{
       opacity: 0;
+
     }
   }
   @keyframes sunrise {
@@ -57,10 +59,17 @@ header{
   .lightmode{
     animation: sunrise .4s ease-in;
     img{
+      width: 1rem;
       filter: brightness(15%);
     }
   }
-  .darkmode{
+  
+}
+header.darkmode{
+  a{
+    color: $primary;
+  }
+  .lightmode{
     animation: sunset .4s ease-in-out;
     img{
       filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(4475%) hue-rotate(316deg) brightness(113%) contrast(95%);
@@ -83,7 +92,7 @@ header{
       }
     }
     .art-info {
-      background: $font-light-gray;
+      background: $font-gray;
       padding: 10px;
       position: absolute;
       bottom: 0;
@@ -92,6 +101,9 @@ header{
       color: $off-white;
       h4{
         color: #fff;
+      }
+      span{
+        font-size: .8em;
       }
     }
   }
@@ -122,21 +134,32 @@ header{
     }
   }
 }
-footer{
+.image-content-wrapper.darkmode{
+  .art-info{
+   background: $font-dark;
+    color: $secondary;
+    span{
+      color: $font-light-gray;
+    }
+  }
+  p{
+    color: $off-white;
+  }
+}
+
+.footer{
   background: transparent;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   text-align: center;
   color: $font-dark;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  margin-top: 2rem;
   border-top: 1px solid $primary;
   span{
     font-weight: 700;
     margin: 1rem 0;
-  }
-  span.dark{
-    color: $primary;
   }
   .socials{
     display: flex;
@@ -144,10 +167,52 @@ footer{
     padding: 0 6rem;
     img{
       width: 1.8rem;
+      filter: invert(7%) sepia(76%) saturate(21%) hue-rotate(327deg) brightness(99%) contrast(89%);
     }
   }
 }
-@media (min-width: 810px) {
+.arrow-up{
+  z-index: 1;
+  position: fixed;
+  background: transparent;
+  bottom: 15px;
+  right: 10px;
+  button{
+    padding: .7rem 1rem;
+    border-radius: 50%;
+    border: none;
+    background: $off-yellow;
+  }
+  img{
+    width: 1rem;
+    filter: invert(7%) sepia(76%) saturate(21%) hue-rotate(327deg) brightness(99%) contrast(89%);
+  }
+}
+.test{
+  display: none;
+}
+.test.clicked{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: .8);
+  img{
+    width: 95%;
+  }
+}
+.footer.dark{
+  span, img{
+    color: $primary;
+  }
+  img{
+    filter: invert(100%) sepia(46%) saturate(1781%) hue-rotate(328deg) brightness(99%) contrast(97%);
+  }
+}
+////////TABLET///////////////////
+@media (min-width: 800px) {
   header{
     padding: 2rem;
   }
@@ -185,7 +250,7 @@ footer{
       color: $font-light-gray;
     }
   }
-  footer{
+  .footer{
     display: flex !important;
     align-items: center;
     justify-content: space-between;
@@ -200,10 +265,16 @@ footer{
       }
     }
   }
+  .test.clicked{
+    img{
+      width: 85%;
+    }
+  }
 }
+//////////DESKTOP////////////////
 @media (min-width: 1280px) {
   header{
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
   }
   .main{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -224,8 +295,8 @@ footer{
         width: 80% !important;
       }
       .art-info{
-        bottom: 74.5%;
-        right: .1rem;
+        bottom: 71%;
+        left: 90%;
         padding: 2.5rem 4rem;
         h4{
           font-size: 2.5em;
@@ -237,8 +308,13 @@ footer{
       color: $font-light-gray;
     }
   }
+  .test.clicked{
+    img{
+      width: 43%;
+    }
+  }
   footer{
-    margin: 0;
+    margin: 0 !important;
     padding: 1rem 10rem;
     .socials{
       a{

@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DATA from './data';
 import { useParams } from 'react-router-dom';
-export const ImagePreview = () => {
+
+export const ImagePreview = (props) => {
+  const {className} = props
   const { id } = useParams()
   const data = DATA.find((item) => item.id === id);
-  const {image, title, date} = data
-  console.log(image)
+  const {image, title, date} = data;
+
+  const [isClcked, setIsClicked] = useState(false);
+  const handleClick = () =>{
+    setIsClicked(current => !current);
+  }
+  const bodyBG = document.body;
+  isClcked ? bodyBG.classList.add('imageClicked') : bodyBG.classList.remove('imageClicked');
   return(
     <>
-      <div className='image-content-wrapper'>
-        <section className='image-content'>
-          <img src={image} alt="sample image" />
+      <div className={`image-content-wrapper ${className}`}>
+        <section className='image-content' >
+          <img src={image} alt="sample image" onClick={handleClick}/>
           <div className='art-info'> 
               <h4>{title}</h4>
               <span>{date}</span>
@@ -21,6 +29,10 @@ export const ImagePreview = () => {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos velit voluptatum ex laboriosam obcaecati a provident atque. Numquam, incidunt aliquid? Consequatur nulla rem fugiat quaerat commodi, perspiciatis ratione voluptas voluptatum.</p>
         </article>
       </div>
+
+      <picture className={`test ${isClcked ? 'clicked':''}`} onClick={handleClick}>
+        <img src={image} alt={image} />
+      </picture>
     </>
   )
 }

@@ -14,9 +14,13 @@ body.darkmode {
   background: #202020;
 }
 
+body.imageClicked {
+  overflow-y: hidden;
+}
+
 header {
   background: transparent;
-  padding: 2rem 1rem 2rem;
+  padding: 1.5rem 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,9 +31,6 @@ header a {
   font-weight: 700;
   text-decoration: none;
   color: #202020;
-}
-header a.dark {
-  color: #F9DC5C;
 }
 header button {
   background: none;
@@ -53,12 +54,17 @@ header .lightmode {
   animation: sunrise 0.4s ease-in;
 }
 header .lightmode img {
+  width: 1rem;
   filter: brightness(15%);
 }
-header .darkmode {
+
+header.darkmode a {
+  color: #F9DC5C;
+}
+header.darkmode .lightmode {
   animation: sunset 0.4s ease-in-out;
 }
-header .darkmode img {
+header.darkmode .lightmode img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(4475%) hue-rotate(316deg) brightness(113%) contrast(95%);
 }
 
@@ -80,7 +86,7 @@ header .darkmode img {
   display: block;
 }
 .main .homepage-image .art-info {
-  background: #5e5b52;
+  background: #333533;
   padding: 10px;
   position: absolute;
   bottom: 0;
@@ -90,6 +96,9 @@ header .darkmode img {
 }
 .main .homepage-image .art-info h4 {
   color: #fff;
+}
+.main .homepage-image .art-info span {
+  font-size: 0.8em;
 }
 
 .image-content-wrapper {
@@ -119,33 +128,85 @@ header .darkmode img {
   line-height: 1.5rem;
 }
 
-footer {
+.image-content-wrapper.darkmode .art-info {
+  background: #202020;
+  color: #FAE588;
+}
+.image-content-wrapper.darkmode .art-info span {
+  color: #5e5b52;
+}
+.image-content-wrapper.darkmode p {
+  color: #FDF8E1;
+}
+
+.footer {
   background: transparent;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   text-align: center;
   color: #202020;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  margin-top: 2rem;
   border-top: 1px solid #F9DC5C;
 }
-footer span {
+.footer span {
   font-weight: 700;
   margin: 1rem 0;
 }
-footer span.dark {
-  color: #F9DC5C;
-}
-footer .socials {
+.footer .socials {
   display: flex;
   justify-content: space-evenly;
   padding: 0 6rem;
 }
-footer .socials img {
+.footer .socials img {
   width: 1.8rem;
+  filter: invert(7%) sepia(76%) saturate(21%) hue-rotate(327deg) brightness(99%) contrast(89%);
 }
 
-@media (min-width: 810px) {
+.arrow-up {
+  z-index: 1;
+  position: fixed;
+  background: transparent;
+  bottom: 15px;
+  right: 10px;
+}
+.arrow-up button {
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  border: none;
+  background: #FCEFB4;
+}
+.arrow-up img {
+  width: 1rem;
+  filter: invert(7%) sepia(76%) saturate(21%) hue-rotate(327deg) brightness(99%) contrast(89%);
+}
+
+.test {
+  display: none;
+}
+
+.test.clicked {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.test.clicked img {
+  width: 95%;
+}
+
+.footer.dark span, .footer.dark img {
+  color: #F9DC5C;
+}
+.footer.dark img {
+  filter: invert(100%) sepia(46%) saturate(1781%) hue-rotate(328deg) brightness(99%) contrast(97%);
+}
+
+@media (min-width: 800px) {
   header {
     padding: 2rem;
   }
@@ -181,25 +242,28 @@ footer .socials img {
     margin: 2rem 5rem;
     color: #5e5b52;
   }
-  footer {
+  .footer {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 5rem;
   }
-  footer span.dark {
+  .footer span.dark {
     color: #F9DC5C;
   }
-  footer .socials {
+  .footer .socials {
     padding: 0;
   }
-  footer .socials a {
+  .footer .socials a {
     padding-left: 1rem;
+  }
+  .test.clicked img {
+    width: 85%;
   }
 }
 @media (min-width: 1280px) {
   header {
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
   }
   .main {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -223,8 +287,8 @@ footer .socials img {
     width: 80% !important;
   }
   .image-content-wrapper .image-content .art-info {
-    bottom: 74.5%;
-    right: 0.1rem;
+    bottom: 71%;
+    left: 90%;
     padding: 2.5rem 4rem;
   }
   .image-content-wrapper .image-content .art-info h4 {
@@ -234,8 +298,11 @@ footer .socials img {
     margin: 2rem 5rem;
     color: #5e5b52;
   }
+  .test.clicked img {
+    width: 43%;
+  }
   footer {
-    margin: 0;
+    margin: 0 !important;
     padding: 1rem 10rem;
   }
   footer .socials a {
