@@ -270,6 +270,9 @@ header.darkmode{
       img{
         width: 80% !important;
       }
+      img:hover{
+        cursor: pointer;
+      }
       .art-info{
         bottom: 81%;
         right: .1rem;

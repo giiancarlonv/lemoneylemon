@@ -264,6 +264,9 @@ header.darkmode .lightmode img {
   .image-content-wrapper .image-content img {
     width: 80% !important;
   }
+  .image-content-wrapper .image-content img:hover {
+    cursor: pointer;
+  }
   .image-content-wrapper .image-content .art-info {
     bottom: 81%;
     right: 0.1rem;
