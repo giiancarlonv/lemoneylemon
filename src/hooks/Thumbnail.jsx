@@ -5,7 +5,7 @@ export const Thumbnail = (props) =>{
   return(
     <>
     <section className='homepage-image' id={id}>
-      <Link to={`/${id}`} className="box"><img src={image} alt={image} /></Link>
+      <Link to={`/lemoneylemon/${id}`} className="box"><img src={image} alt={image} /></Link>
       <div className='art-info'>
         <h4>{title}</h4>
         <span>{date}</span>

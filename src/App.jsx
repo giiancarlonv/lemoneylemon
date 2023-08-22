@@ -24,7 +24,7 @@ function App() {
         <Navbar className={darkMode ? 'darkmode' : ''} onClick={handleClick} image={darkMode ? sunIcon : moonIcon}/>
           <Routes>
             <Route path='/lemoneylemon/' element={<Homepage  />}/> 
-              <Route path='/:id' element={<ImagePreview className={darkMode ? 'darkmode' : ''} />} />
+              <Route path='/lemoneylemon/:id' element={<ImagePreview className={darkMode ? 'darkmode' : ''} />} />
             <Route path="*" element={<Errorpage className={darkMode ? 'darkmode' : ''} />} />
           </Routes>
           <Footer className={darkMode?'footer dark':'footer'}/>
