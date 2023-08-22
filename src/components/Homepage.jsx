@@ -8,7 +8,6 @@ export const Homepage = () => {
 
   return (
   <>
-    <Outlet />
     <div className='main'>
       {DATA.map((item, index) => (
         <Thumbnail data={item} key={index}/>  

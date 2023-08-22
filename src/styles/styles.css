@@ -206,9 +206,47 @@ header.darkmode .lightmode img {
   filter: invert(100%) sepia(46%) saturate(1781%) hue-rotate(328deg) brightness(99%) contrast(97%);
 }
 
+.errorpage {
+  background: transparent;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.errorpage img {
+  width: 35%;
+  margin: 1.5rem 0;
+}
+.errorpage h1 {
+  font-weight: 800;
+}
+.errorpage span {
+  color: #5e5b52;
+}
+.errorpage button {
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #202020;
+  margin: 2.5rem 0 0;
+  padding: 0.5rem 2rem;
+  border: none;
+  background: #FAE588;
+}
+
+.errorpage.darkmode h1 {
+  color: #FDF8E1;
+}
+.errorpage.darkmode span {
+  color: #FCEFB4;
+}
+
 @media (min-width: 600px) {
   header {
     padding: 2rem;
+  }
+  header button {
+    cursor: pointer;
   }
   .main {
     margin: 2rem 1rem;
@@ -216,6 +254,9 @@ header.darkmode .lightmode img {
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     padding: 0 1rem;
+  }
+  .main img {
+    border-radius: 5px;
   }
   .image-content-wrapper .image-content {
     padding: 0 1rem;
@@ -257,11 +298,27 @@ header.darkmode .lightmode img {
   .footer .socials a {
     padding-left: 1rem;
   }
+  .footer .socials a img:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(80%) sepia(100%) saturate(7175%) hue-rotate(313deg) brightness(111%) contrast(104%);
+  }
   .test.clicked img {
     width: 85%;
   }
   .arrow-up {
     right: 40px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .arrow-up:hover button {
+    background: #F9DC5C;
+    cursor: pointer;
+  }
+  .errorpage {
+    margin-bottom: 69%;
+  }
+  .errorpage img {
+    width: 20%;
   }
 }
 @media (min-width: 1280px) {
@@ -273,6 +330,7 @@ header.darkmode .lightmode img {
     -moz-column-gap: 15px;
          column-gap: 15px;
     row-gap: 10px;
+    padding: 0 3rem;
   }
   .main .homepage-image {
     margin: 0;
@@ -313,5 +371,11 @@ header.darkmode .lightmode img {
   }
   .arrow-up {
     right: 40px;
+  }
+  .errorpage {
+    margin-bottom: 20%;
+  }
+  .errorpage img {
+    width: 15%;
   }
 }/*# sourceMappingURL=styles.css.map */

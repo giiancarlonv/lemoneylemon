@@ -1,13 +1,14 @@
 import { React, useState } from 'react'
 import { Homepage } from './components/Homepage'
 import './styles/styles.css'
-import { BrowserRouter, Route, Routes, } from 'react-router-dom'
+import { BrowserRouter, Outlet, Route, Routes, } from 'react-router-dom'
 import sunIcon from './assets/icons/icon-sun.svg';
 import moonIcon from './assets/icons/icon-moon.svg';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ImagePreview } from './hooks/ImagePreview'
 import { LandingPage } from './components/LandingPage';
+import { Errorpage } from './components/Errorpage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,8 +23,9 @@ function App() {
       <BrowserRouter>
         <Navbar className={darkMode ? 'darkmode' : ''} onClick={handleClick} image={darkMode ? sunIcon : moonIcon}/>
           <Routes>
-            <Route path='/lemoneylemon' element={<Homepage  />}/> 
-            <Route path='/imagepage/:id' element={<ImagePreview className={darkMode ? 'darkmode' : ''} />} />
+            <Route path='/lemoneylemon/' element={<Homepage  />}/> 
+              <Route path='/:id' element={<ImagePreview className={darkMode ? 'darkmode' : ''} />} />
+            <Route path="*" element={<Errorpage className={darkMode ? 'darkmode' : ''} />} />
           </Routes>
           <Footer className={darkMode?'footer dark':'footer'}/>
       </BrowserRouter>
