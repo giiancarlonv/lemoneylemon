@@ -1,4 +1,5 @@
 lemoneylemon - art gallery website
+vite + react
 
 ![image](https://github.com/giiancarlonv/lemoneylemon/assets/53168830/d1ae370d-7d12-45d5-9523-56fe355655fe)
 
