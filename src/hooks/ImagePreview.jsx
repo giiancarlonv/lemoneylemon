@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import DATA from './data';
 import { useParams } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const ImagePreview = (props) => {
   const {className} = props
@@ -18,7 +19,7 @@ export const ImagePreview = (props) => {
     <>
       <div className={`image-content-wrapper ${className}`}>
         <section className='image-content' >
-          <img src={image} alt="sample image" onClick={handleClick}/>
+          <LazyLoadImage src={image} alt="sample image" onClick={handleClick}/>
           <div className='art-info'> 
               <h4>{title}</h4>
               <span>{date}</span>
@@ -31,7 +32,7 @@ export const ImagePreview = (props) => {
       </div>
 
       <picture className={`test ${isClcked ? 'clicked':''}`} onClick={handleClick}>
-        <img src={image} alt={image} />
+        <LazyLoadImage src={image} alt={image} />
       </picture>
     </>
   )
